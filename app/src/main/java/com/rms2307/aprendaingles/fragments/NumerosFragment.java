@@ -14,7 +14,7 @@ import com.rms2307.aprendaingles.R;
 import com.rms2307.aprendaingles.util.ConfigSom;
 
 /**
- * A simple {@link Fragment} subclass.
+ * a simple {@link Fragment} subclass.
  * Use the {@link NumerosFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
@@ -42,7 +42,7 @@ public class NumerosFragment extends Fragment implements  View.OnClickListener{
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment NumerosFragment.
+     * @return a new instance of fragment NumerosFragment.
      */
     // TODO: Rename and change types and number of parameters
     public static NumerosFragment newInstance(String param1, String param2) {

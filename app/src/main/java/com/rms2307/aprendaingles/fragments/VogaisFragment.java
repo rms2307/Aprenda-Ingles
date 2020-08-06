@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.rms2307.aprendaingles.R;
 
 /**
- * A simple {@link Fragment} subclass.
+ * a simple {@link Fragment} subclass.
  * Use the {@link VogaisFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
@@ -36,7 +36,7 @@ public class VogaisFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment VogaisFragment.
+     * @return a new instance of fragment VogaisFragment.
      */
     // TODO: Rename and change types and number of parameters
     public static VogaisFragment newInstance(String param1, String param2) {
