@@ -1,12 +1,15 @@
 package com.rms2307.aprendaingles.fragments;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.rms2307.aprendaingles.R;
 
@@ -15,7 +18,10 @@ import com.rms2307.aprendaingles.R;
  * Use the {@link BichosFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BichosFragment extends Fragment {
+public class BichosFragment extends Fragment implements View.OnClickListener {
+
+    private ImageButton buttonCao, buttonGato, buttonLeao, buttonMacaco, buttonOvelha, buttonVaca;
+    private MediaPlayer mediaPlayer;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,7 +66,61 @@ public class BichosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bichos, container, false);
+        View view = inflater.inflate(R.layout.fragment_bichos, container, false);
+
+        buttonCao = view.findViewById(R.id.imageButtonCao);
+        buttonGato = view.findViewById(R.id.imageButtonGato);
+        buttonLeao = view.findViewById(R.id.imageButtonLeao);
+        buttonMacaco = view.findViewById(R.id.imageButtonMacaco);
+        buttonOvelha = view.findViewById(R.id.imageButtonOvelha);
+        buttonVaca = view.findViewById(R.id.imageButtonVaca);
+
+        buttonCao.setOnClickListener(this);
+        buttonGato.setOnClickListener(this);
+        buttonLeao.setOnClickListener(this);
+        buttonMacaco.setOnClickListener(this);
+        buttonOvelha.setOnClickListener(this);
+        buttonVaca.setOnClickListener(this);
+
+        return view;
     }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.imageButtonCao:
+                tocarSom(R.raw.dog);
+                break;
+            case R.id.imageButtonGato:
+                tocarSom(R.raw.cat);
+                break;
+            case R.id.imageButtonLeao:
+                tocarSom(R.raw.lion);
+                break;
+            case R.id.imageButtonMacaco:
+                tocarSom(R.raw.monkey);
+                break;
+            case R.id.imageButtonOvelha:
+                tocarSom(R.raw.sheep);
+                break;
+            case R.id.imageButtonVaca:
+                tocarSom(R.raw.cow);
+                break;
+        }
+    }
+
+    public void tocarSom(int som) {
+        mediaPlayer = MediaPlayer.create(getActivity(), som);
+        if (mediaPlayer != null) {
+            mediaPlayer.start();
+            
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    mediaPlayer.release();
+                }
+            });
+        }
+    }
+
 }
