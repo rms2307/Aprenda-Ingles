@@ -5,13 +5,13 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.rms2307.aprendaingles.R;
+import com.rms2307.aprendaingles.util.ConfigSom;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,7 +21,7 @@ import com.rms2307.aprendaingles.R;
 public class BichosFragment extends Fragment implements View.OnClickListener {
 
     private ImageButton buttonCao, buttonGato, buttonLeao, buttonMacaco, buttonOvelha, buttonVaca;
-    private MediaPlayer mediaPlayer;
+    ConfigSom som;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -87,40 +87,32 @@ public class BichosFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        som = new ConfigSom();
         switch (view.getId()) {
             case R.id.imageButtonCao:
-                tocarSom(R.raw.dog);
+                som.tocarSom(getActivity(), R.raw.dog);
                 break;
             case R.id.imageButtonGato:
-                tocarSom(R.raw.cat);
+                som.tocarSom(getActivity(), R.raw.cat);
                 break;
             case R.id.imageButtonLeao:
-                tocarSom(R.raw.lion);
+                som.tocarSom(getActivity(), R.raw.lion);
                 break;
             case R.id.imageButtonMacaco:
-                tocarSom(R.raw.monkey);
+                som.tocarSom(getActivity(), R.raw.monkey);
                 break;
             case R.id.imageButtonOvelha:
-                tocarSom(R.raw.sheep);
+                som.tocarSom(getActivity(), R.raw.sheep);
                 break;
             case R.id.imageButtonVaca:
-                tocarSom(R.raw.cow);
+                som.tocarSom(getActivity(), R.raw.cow);
                 break;
         }
     }
 
-    public void tocarSom(int som) {
-        mediaPlayer = MediaPlayer.create(getActivity(), som);
-        if (mediaPlayer != null) {
-            mediaPlayer.start();
-            
-            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer mediaPlayer) {
-                    mediaPlayer.release();
-                }
-            });
-        }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        som.Destroy();
     }
-
 }

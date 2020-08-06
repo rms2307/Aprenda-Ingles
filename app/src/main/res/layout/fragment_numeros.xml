@@ -8,48 +8,48 @@
     tools:context=".fragments.NumerosFragment">
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/imageButtonUm"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:layout_marginTop="32dp"
         android:background="@android:color/transparent"
         android:scaleType="centerCrop"
         android:src="@drawable/um"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton8"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton10"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonTres"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonDois"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton10"
+        android:id="@+id/imageButtonDois"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:layout_marginTop="32dp"
         android:background="@android:color/transparent"
         android:scaleType="centerCrop"
         android:src="@drawable/dois"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton11"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonQuatro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton7"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonUm"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton11"
+        android:id="@+id/imageButtonQuatro"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:background="@android:color/transparent"
         android:scaleType="centerCrop"
         android:src="@drawable/quatro"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton12"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonSeis"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton8"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton10" />
+        app:layout_constraintStart_toEndOf="@+id/imageButtonTres"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonDois" />
 
     <ImageButton
-        android:id="@+id/imageButton12"
+        android:id="@+id/imageButtonSeis"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:background="@android:color/transparent"
@@ -58,32 +58,32 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton9"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton11" />
+        app:layout_constraintStart_toEndOf="@+id/imageButtonCinco"
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonQuatro" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/imageButtonTres"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:background="@android:color/transparent"
         android:scaleType="centerCrop"
         android:src="@drawable/tres"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton9"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton11"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonCinco"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonQuatro"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonUm" />
 
     <ImageButton
-        android:id="@+id/imageButton9"
+        android:id="@+id/imageButtonCinco"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:background="@android:color/transparent"
         android:scaleType="centerCrop"
         android:src="@drawable/cinco"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton12"
+        app:layout_constraintEnd_toStartOf="@+id/imageButtonSeis"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButtonTres" />
 </androidx.constraintlayout.widget.ConstraintLayout>
